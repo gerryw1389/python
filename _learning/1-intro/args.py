@@ -19,5 +19,8 @@ print('Argument List:', str(sys.argv))
 print('First argument:',  str(sys.argv[0]))
 print('Second argument:',  str(sys.argv[1]))
 print('Third argument:',  str(sys.argv[2]))
+
+bob = str(sys.argv[0])
+print("magically, the filename for this script is: " + bob)
 # save and exit
 # now type `chmod +x ./max.py` and `python3 ./max.py 13 23 57`
