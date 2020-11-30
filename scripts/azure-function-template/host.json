@@ -1,15 +1,18 @@
 {
   "version": "2.0",
   "logging": {
+    "logLevel": {
+      "Function.ReadJSON.User": "Warning",
+      "Function.ReadJSON2.User": "Warning",
+      "Function.ReadJSON3.User": "Warning",
+      "default": "None"
+    },
     "applicationInsights": {
-      "samplingSettings": {
-        "isEnabled": true,
-        "excludedTypes": "Request"
+      "httpAutoCollectionOptions": {
+        "enableHttpTriggerExtendedInfoCollection": true,
+        "enableW3CDistributedTracing": true,
+        "enableResponseHeaderInjection": true
       }
     }
-  },
-  "extensionBundle": {
-    "id": "Microsoft.Azure.Functions.ExtensionBundle",
-    "version": "[1.*, 2.0.0)"
   }
 }
