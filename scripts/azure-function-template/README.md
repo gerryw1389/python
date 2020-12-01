@@ -1,4 +1,8 @@
-# ReadJSON
+### Setup
+
+Add yourself as collaborator to this repo. Then make pushes to production.
+
+### ReadJSON
 
 This is a HTTP triggered python app running in Azure Functions that:
 
@@ -6,11 +10,11 @@ This is a HTTP triggered python app running in Azure Functions that:
 
    ```json
    {
-      "name": "gerry-ReadJSON3",
-      "car": "mustang-ReadJSON3",
+      "name": "gerry",
+      "car": "mustang",
       "birth": {
-         "city": "fort worth-ReadJSON3",
-         "state": "Texas-ReadJSON3"
+         "city": "fort worth",
+         "state": "Texas"
       }
    }
    ```
@@ -18,11 +22,11 @@ This is a HTTP triggered python app running in Azure Functions that:
    - Response:
 
    ```
-   Hello, gerry-ReadJSON3.
+   Hello, gerry.
 
-   You chose mustang-ReadJSON3.
+   You chose mustang.
 
-   Your birth city is fort worth-ReadJSON3 in the state of Texas-ReadJSON3
+   Your birth city is fort worth in the state of Texas
    ```
 
 2. You can call any of the three functions `ReadJSON`, `ReadJSON2`, or `ReadJSON3`
@@ -38,5 +42,5 @@ This is a HTTP triggered python app running in Azure Functions that:
 6. Added a way for it to return a json response instead of text (see `ReadJSON`).
 
   ```json
-  [{"response": "Hello, gerry-ReadXML.\n\nYou chose mustang-ReadXML.\n\nYour birth city is fort worth-ReadXML in the state of Texas-ReadXML", "date_time": "2020-11-30-21-23-29"}]
+  [{"response": "Hello, gerry.\n\nYou chose mustang.\n\nYour birth city is fort worth in the state of Texas", "date_time": "2020-11-30-22-48-21"}]
   ```
