@@ -14,11 +14,12 @@ from time import sleep
 def clear(): 
     # for windows 
     if name == 'nt': 
-        _ = system('cls') 
+        clear = system('cls') 
     # for mac and linux(here, os.name is 'posix') 
     else: 
-        _ = system('clear') 
-  
+        clear = system('clear') 
+    return clear
+
 # print out some text 
 print('hello gerry\n' * 10) 
   
