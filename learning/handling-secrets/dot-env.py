@@ -2,8 +2,6 @@
 
 ################################################################
 # Example of package dotenv
-################################################################
-
 # Step 1: Create your venv folder and add the python-dotenv package:
 
 # cd /myuser/scripts
@@ -21,14 +19,24 @@
 # MYVAR="hunter2"
 
 # Step 3: Enter the following in your .py file that should also be at root of csv folder
+################################################################
+
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-try:
-   myvar = os.environ["MYVAR"]
-except Exception as e:
-   print("Unable to get environmental variable: myvar")
-   exit(1)
-# same for EMAIL
+def main():
+    try:
+        myvar = os.environ["MYVAR"]
+    except KeyError:
+        print("Unable to get environmental variables")
+    except Exception as e:
+        print("Generic catch: Unable to get environmental variables")
+        print("Generic catch: " + str(e))
+    # same for EMAIL
+
+if __name__ == '__main__':
+    main()
+
+
