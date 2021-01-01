@@ -1,28 +1,7 @@
 #!/usr/bin/env python3
 
-import requests
-from requests.auth import HTTPBasicAuth
-import sys
-from dotenv import load_dotenv
-import os
-
-url = "http://wttr.in/FortWorth.json"
-payload = {}
-headers = {
-'Content-Type': 'application/json',
-}
-r = requests.request("GET", url, headers=headers, data=payload)
-
-
-
-# print(r)
-# print(r.json)
-# print(r.content)
-
-# Lol, https://raw.githubusercontent.com/hasha2982/wttr.py/master/wttrpy/__init__.py shows this
-print(r.text)
-print(dir(r))
-
+################################################################
+# Example of using python to replace my powershell function at https://automationadmin.com/2017/12/use-powershell-to-get-weather-using-wttr-in/
 
 # Powershell to convert:
 # If ($City)
@@ -61,3 +40,24 @@ print(dir(r))
 # Write-Log "Getting weather for current location"
 # (curl http://wttr.in -UserAgent "curl" ).Content
 # }
+################################################################
+
+import requests
+
+url = "http://wttr.in/FortWorth.json"
+payload = {}
+headers = {
+'Content-Type': 'application/json',
+}
+r = requests.request("GET", url, headers=headers, data=payload)
+
+## why is this not showing?
+# print(r)
+# print(r.json)
+# print(r.content)
+
+# Lol, https://raw.githubusercontent.com/hasha2982/wttr.py/master/wttrpy/__init__.py shows this
+print(r.text)
+
+#print(dir(r))
+

@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+################################################################
+# Example of using AlphaVantage API
+# Sign up to get an API key and import it
+# This script currently just gets the 5 latest values for bitcoin but can do others as well
+# will eventually replace my powershell script at https://automationadmin.com/2020/09/ps-send-email-bitcoin
+################################################################
+
 import requests
 from requests.auth import HTTPBasicAuth
 import sys
@@ -16,7 +23,7 @@ except KeyError:
 except Exception as e:
     print("Generic catch: Unable to get environmental variables")
     print("Generic catch: " + str(e))
-        
+
 # funds = ["VFIFX", "VWUSX", "VTSAX", "BTCUSD"]
 
 # for fund in funds:
