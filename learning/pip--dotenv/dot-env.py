@@ -21,7 +21,7 @@
 # MYVAR="hunter2"
 
 # Step 3: Enter the following in your .py file that should also be at root of csv folder
-
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
