@@ -2,6 +2,7 @@
 
 ################################################################
 # Example of subprocess and running native commands in python
+# Have not tested extensively
 ################################################################
 
 import subprocess

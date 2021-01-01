@@ -2,6 +2,7 @@
 
 ################################################################
 # When ran, it will return 1 if all values passed in are unique and 0 if any repeat
+# Maybe a good example of testing that each argument passed is unique?
 
 # example: one repeates
 # 5, 6, 6, 7

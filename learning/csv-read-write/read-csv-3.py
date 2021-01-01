@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 ################################################################
-# Text
+# Same as before, but place in functions, return as dict
 ################################################################
 
 #pg 301
@@ -43,7 +43,7 @@ def floatnum(any):
 # create empty dict
 people = {}
 
-with open("C:\\_gwill\\repo-home\\python\\learning\\python-all-in-one-for-dummies\\book3-ch1-csv\\sample.csv", encoding="utf-8", newline="") as f:
+with open("C:\\_gwill\\repo-home\\h1python\\learning\\csv-read-write\\sample.csv", encoding="utf-8", newline="") as f:
     # reader = csv.reader(f)
     # optional, print row number
     reader = enumerate(csv.reader(f))

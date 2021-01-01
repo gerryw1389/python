@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
 
 ################################################################
-# Text
+# Importing submodules - not my preferred way
 ################################################################
 
-# This time we import then entire modules instead of submodules
+from os import system, name 
+from time import sleep
 
-import os
-import time 
-  
+def clear(): 
+    
+    if name == 'nt': 
+        clear = system('cls') 
+    else: 
+        clear = system('clear') 
+    return clear
+
 # print out some text 
 print('hello gerry\n'*10) 
-  
+
 # sleep for 2 seconds after printing output 
-time.sleep(2) 
-  
+sleep(2) 
+
 # now call function we defined above 
-os.system('clear') 
+clear()

@@ -1,6 +1,5 @@
 # https://learnxinyminutes.com/docs/python/
 
-
 # Single line comments start with a number symbol.
 
 """ Multiline strings can be written
