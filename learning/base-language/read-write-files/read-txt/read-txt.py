@@ -1,4 +1,11 @@
-filename = 'alice.txt'
+#!/usr/bin/env python3
+
+################################################################
+# Example reading a file and counting its words
+################################################################
+
+
+filename = 'C:\\_gwill\\repo-home\\h1python\\learning\\base-language\\files-exceptions\\read-txt\\files\\alice.txt'
 
 try:
     with open(filename, encoding='utf-8') as f:

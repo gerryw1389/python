@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 ################################################################
-# Text
+# This is a template function that will parse a CSV and extract 3 fields
 ################################################################
 
 import csv

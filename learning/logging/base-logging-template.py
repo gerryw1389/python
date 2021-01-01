@@ -8,6 +8,7 @@ import logging
 import logging.handlers
 import sys
 
+## Set it up
 logger = logging.getLogger("")
 logger.setLevel(logging.DEBUG)
 handler = logging.handlers.RotatingFileHandler(
@@ -16,18 +17,20 @@ handler = logging.handlers.RotatingFileHandler(
 formatter = logging.Formatter("%(asctime)s => %(levelname)s : %(message)s", datefmt='%Y-%m-%d %I:%M:%S %p')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
-
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
+
+## Test it
 logging.info('hello world')
 
 logging.error('error - hello world')
 
 logging.warning('warning - hello world')
-name = 'Gerry'
 
+name = 'Gerry'
 logging.error('%s raised an error', name)
 
+## Log an error
 a = 5
 b = 0
 
@@ -35,5 +38,3 @@ try:
    c = a / b
 except Exception as e:
    logging.error("Exception occurred", exc_info=True)
-
-   logging.warning('warning - hello world')

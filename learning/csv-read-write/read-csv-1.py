@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 ################################################################
-# Text
+# Import CSV, print index and content for each row
 ################################################################
 
 import csv
 
-with open('sample.csv', encoding='utf-8', newline='') as f:
+with open('C:\\_gwill\\repo-home\\h1python\\learning\\csv-read-write\\sample.csv', encoding='utf-8', newline='') as f:
     reader = csv.reader(f)
     # optional, print row number
     reader = enumerate(csv.reader(f))
