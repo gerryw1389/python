@@ -1,5 +1,5 @@
 
-Set-Location "c:\_gwill\repo-home\h0python\schedtasks\send_credit_balance"
+Set-Location "c:\scripts\schedtasks\send_credit_balance"
 .\venv\Scripts\activate
 python main.py
 # if the script had arguments

@@ -1,5 +1,5 @@
 
-Set-Location "c:\_gwill\repo-home\h0python\schedtasks\check_bitcoin"
+Set-Location "c:\scripts\schedtasks\check_bitcoin"
 .\venv\Scripts\activate
 python main.py
 # if the script had arguments

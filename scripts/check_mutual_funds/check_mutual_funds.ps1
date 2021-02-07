@@ -1,5 +1,5 @@
 
-Set-Location "c:\_gwill\repo-home\h0python\schedtasks\check_mutual_funds"
+Set-Location "c:\scripts\schedtasks\check_mutual_funds"
 .\venv\Scripts\activate
 python main.py
 # if the script had arguments
