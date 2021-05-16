@@ -1,6 +1,6 @@
 ### Python
 
-This repo will house python code that can be used freely (sanitized)
+This repo will house python code that can be used freely (sanitized). Also, many of the functions have articles that go with them from my blog at [https://automationadmin.com](https://automationadmin.com).
 
 ### DISCLAIMER 
 
