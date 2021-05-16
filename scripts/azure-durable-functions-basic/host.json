@@ -1,0 +1,22 @@
+{
+   "version": "2.0",
+   "logging": {
+      "fileLoggingMode": "debugOnly",
+      "logLevel": {
+         "Function.MyHttp": "Information",
+         "Function.MyOrch": "Information",
+         "Function.MyActivity": "Information",
+         "default": "None"
+      },
+      "applicationInsights": {
+         "samplingSettings": {
+            "isEnabled": true,
+            "excludedTypes": "Request"
+         }
+      }
+   },
+   "extensionBundle": {
+      "id": "Microsoft.Azure.Functions.ExtensionBundle",
+      "version": "[2.*, 3.0.0)"
+   }
+}

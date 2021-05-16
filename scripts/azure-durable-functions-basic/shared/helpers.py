@@ -2,16 +2,46 @@
 
 ##################################################
 # Helper functions
+#
+# Ctrl+Shift+[    Fold (collapse) region  editor.fold
+# Ctrl+Shift+]    Unfold (uncollapse) region  editor.unfold
+# Ctrl+K Ctrl+[   Fold (collapse) all subregions  editor.foldRecursively
+# Ctrl+K Ctrl+]   Unfold (uncollapse) all subregions  editor.unfoldRecursively
+# Ctrl+K Ctrl+0   Fold (collapse) all regions editor.foldAll
+# Ctrl+K Ctrl+J   Unfold (uncollapse) all regions
 ##################################################
+
+### Request Module Functions Template:
+# credentials
+# \n
+# headers = {}
+# \n
+# url
+# \n
+# payload
+# \n
+# r = requests.request("PUT", url, auth=(u, p), headers=headers, data=json.dumps(payload))
+# if r.status_code != 200:
+#     err_resp = f"Status Code Details:\n" \
+#         f"Status code returned: {r.status_code}\n" \
+#         f"Headers sent: {r.headers}\n" \
+#         f"Body sent: {payload}\n" \
+#         f"API response: {r.json()}"
+#     logging.error(err_resp)
+
+# return r
+
+#local testing
+# from dotenv import load_dotenv
+# load_dotenv()
 
 import sys
 import os
 import logging
 import requests
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
-
 
 def err_response(log_msg):
     '''
@@ -32,7 +62,6 @@ def err_response(log_msg):
     logging.error(f"Sending Response: {errRspJson}")
     return errRspJson
 
-
 def import_creds():
     '''
     Gets secrets from Azure Keyvault as an application
@@ -45,7 +74,7 @@ def import_creds():
     logging.info(f"tenant: { keyvault_creds['tenant'] }")
     logging.info(f"vault_name: { keyvault_creds['vault_name'] }")
     '''
-    
+
     try:
         creds = {}
         creds["client_id"] = os.environ["client_id"]
@@ -59,10 +88,11 @@ def import_creds():
 
     return creds
 
+
 def get_oauth(tenant, client_id, client_secret):
     '''
     Gets an Oauth token from Graph API as an application
-    See the scope where the application is scoped to just KeyVault
+    See the scope in the payload where the application is scoped to just Key Vault
     
     Example of how to call from main():
     token = get_oauth( 
@@ -81,6 +111,7 @@ def get_oauth(tenant, client_id, client_secret):
     r = response.json()
     return r
 
+
 def get_secret(token, vault_name, secret_name):
     '''
     Using an Oauth token, gets the latest version of a secret
@@ -95,16 +126,17 @@ def get_secret(token, vault_name, secret_name):
     '''
     # Gets the latest version of a secret
     url = f"https://{vault_name}.vault.azure.net/secrets/{secret_name}?api-version=7.1"
-    
+
     # for a specific version of the secret, replace {version}
     # version = "aadsfasdfasdfasdf"
     # url = f"https://{vault_name}.vault.azure.net/secrets/test/{version}?api-version=7.1"
 
-    payload={}
-    headers = { "Authorization": f"Bearer {token}" }
+    payload = {}
+    headers = {"Authorization": f"Bearer {token}"}
     response = requests.request("GET", url, headers=headers, data=payload)
     r = response.json()
     return r
+
 
 def get_sn_username():
     '''
@@ -123,3 +155,4 @@ def get_sn_username():
                         vault_name=keyvault_creds['vault_name'],
                         secret_name='Service-Now-User')
     return secret['value']
+
